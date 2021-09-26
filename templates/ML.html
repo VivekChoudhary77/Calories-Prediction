@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prediction Using Machine Learning</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ML_css.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <center><h1>Calories Prediction Using Machine Learning Algorithm</h1></center>
+    <div class="container">
+  <form id="contact" action="{{url_for('predict')}}" method="POST">
+        <fieldset>
+      <input placeholder="Enter Gender Type 0:Male 1:Female" name= "a" type="number" tabindex="1" min="0" max="1" required autofocus>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Age" type="number" name= "b" tabindex="2" min="20" max="79" required>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Height min:123 max:222" name= "c" type="number" tabindex="3" min="123" max="222" step="0.1" required>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Weight min:36 max:132" name= "d" type="number" tabindex="4" min="36" max="132" step="0.1" required>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Duration" type="number" name= "e" tabindex="5" step="0.1" required>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Heart Rate min:67 max:128" name= "f" type="number" tabindex="6" min="67" max="128" step="0.1" required>
+        </fieldset>
+        <fieldset>
+      <input placeholder="Enter the Body Temperature (Upto 0.1 decimal places)" name= "g" type="number" tabindex="7" step="0.1"required>
+        </fieldset>
+        <fieldset>
+      <button id="contact-submit" name="submit" type="submit" value="predict">Submit</button>
+        </fieldset>
+        <fieldset>
+          <center><h2>{{ prediction_text }}</h2></center>
+        </fieldset>
+      </form>
+    </div>
+<center><img src="https://saxoncrossfit.com/wp-content/uploads/2019/11/cals.jpg" height="auto" width="auto"></center>
+</body>
+</html>
